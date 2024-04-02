@@ -9,7 +9,7 @@ st.title("Data Visualization Dashboard")
 st.write("This app allows you to explore and visualize a dataset using various charts and filters.")
 
 # Load dataset
-dataset = pd.read_csv("your_dataset.csv")
+dataset = pd.read_csv("my_dataset.csv")
 
 # Sidebar filters
 st.sidebar.title("Filters")
