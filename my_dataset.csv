@@ -1,11 +1,49 @@
-Name,City,Country,Latitude,Longitude,Population
-New York City,New York,United States,40.7128,-74.0059,8804190
-London,London,United Kingdom,51.5072,-0.1276,8982000
-Tokyo,Tokyo,Japan,35.6895,139.6917,37435191
-Paris,Paris,France,48.8566,2.3522,2161000
-Sydney,Sydney,Australia,-33.8688,151.2093,5312000
-Berlin,Berlin,Germany,52.5200,13.4050,3769000
-Moscow,Moscow,Russia,55.7558,37.6173,12615279
-Los Angeles,Los Angeles,United States,34.0522,-118.2437,3971883
-Mexico City,Mexico City,Mexico,19.4326,-99.1332,21581000
-Sao Paulo,Sao Paulo,Brazil,-23.5505,-46.6333,22046000
+City,Country,TimeZone
+New York,United States,-04:00
+London,United Kingdom,+00:00
+Tokyo,Japan,+09:00
+Paris,France,+01:00
+Sydney,Australia,+10:00
+Berlin,Germany,+01:00
+Moscow,Russia,+03:00
+Los Angeles,United States,-07:00
+Mexico City,Mexico,-05:00
+Sao Paulo,Brazil,-03:00
+Shanghai,China,+08:00
+Mumbai,India,+05:30
+Toronto,Canada,-04:00
+Madrid,Spain,+01:00
+Singapore,Singapore,+08:00
+Cairo,Egypt,+02:00
+Buenos Aires,Argentina,-03:00
+Lagos,Nigeria,+01:00
+Jakarta,Indonesia,+07:00
+Karachi,Pakistan,+05:00
+Manila,Philippines,+08:00
+Seoul,South Korea,+09:00
+Lima,Peru,-05:00
+Kinshasa,Democratic Republic of the Congo,+01:00
+Bogota,Colombia,-05:00
+Istanbul,Turkey,+03:00
+Tehran,Iran,+03:30
+Dhaka,Bangladesh,+06:00
+Rio de Janeiro,Brazil,-03:00
+Osaka,Japan,+09:00
+Bangkok,Thailand,+07:00
+Hanoi,Vietnam,+07:00
+Guangzhou,China,+08:00
+Chongqing,China,+08:00
+Riyadh,Saudi Arabia,+03:00
+Kolkata,India,+05:30
+Lahore,Pakistan,+05:00
+Kuala Lumpur,Malaysia,+08:00
+Khartoum,Sudan,+03:00
+Johannesburg,South Africa,+02:00
+Nairobi,Kenya,+03:00
+Santiago,Chile,-04:00
+Pune,India,+05:30
+Hyderabad,India,+05:30
+Calgary,Canada,-06:00
+Auckland,New Zealand,+12:00
+Almaty,Kazakhstan,+06:00
+Lusaka,Zambia,+02:00
