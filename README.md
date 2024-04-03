@@ -1,6 +1,6 @@
-# TECHIN 510 Lab 1
+# TECHIN 510 Lab 2
 
-A personal website for TECHIN 510 Lab 1. A personal website for myself.
+A World Clock App.
 
 ## How to Run
 
