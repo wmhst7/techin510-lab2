@@ -3,6 +3,7 @@ import pandas as pd
 import plotly.express as px
 import datetime
 import pytz
+import time
 
 # Read the cities data from CSV
 cities_data = pd.read_csv("cities.csv")
@@ -29,15 +30,15 @@ if selected_cities:
     
     with col1:
         st.subheader("Current Time")
-        for city in selected_cities:
-            timezone = filtered_data[filtered_data["City"] == city]["TimeZone"].values[0]
-            current_time = datetime.datetime.now(pytz.timezone(timezone)).strftime("%Y-%m-%d %H:%M:%S")
-            st.write(f"{city}: {current_time}")
-    
-    with col2:
-        st.subheader("UNIX Timestamp")
-        unix_timestamp = int(datetime.datetime.now().timestamp())
-        st.write(f"UNIX Timestamp: {unix_timestamp}")
+        while True:
+            for city in selected_cities:
+                timezone = filtered_data[filtered_data["City"] == city]["TimeZone"].values[0]
+                current_time = datetime.datetime.now(pytz.timezone(timezone))
+                unix_timestamp = int(current_time.timestamp())
+                formatted_time = current_time.strftime("%Y-%m-%d %H:%M:%S")
+                st.write(f"{city}: {formatted_time} (UNIX: {unix_timestamp})")
+            time.sleep(1)
+            st.rerun()
 
 # Data visualization
 st.subheader("Data Visualization")
