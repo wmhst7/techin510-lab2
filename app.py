@@ -25,6 +25,8 @@ def update_clock():
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     st.markdown(f"Current Time: {current_time}")
 
+cols = []
+
 # Show city clocks and UNIX timestamps
 if selected_cities:
     st.subheader("City Clocks")
@@ -43,13 +45,10 @@ if selected_cities:
                 st.markdown(f"UNIX Timestamp: {unix_timestamp}")
 
             update_city_clock()
-
-# Refresh clock every second
-import time
-
+            
 for i in range(1):
-    time.sleep(1)
-    update_clock()
-    for city_clock in cols:
-        city_clock.update_clock()
-    st.experimental_rerun()
+  time.sleep(1)
+  update_clock()
+  for city_clock in cols:
+      city_clock.update_clock()
+  st.experimental_rerun()
