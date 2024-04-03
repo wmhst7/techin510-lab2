@@ -1,49 +1,41 @@
 City,Country,TimeZone
-New York,United States,-04:00
-London,United Kingdom,+00:00
-Tokyo,Japan,+09:00
-Paris,France,+01:00
-Sydney,Australia,+10:00
-Berlin,Germany,+01:00
-Moscow,Russia,+03:00
-Los Angeles,United States,-07:00
-Mexico City,Mexico,-05:00
-Sao Paulo,Brazil,-03:00
-Shanghai,China,+08:00
-Mumbai,India,+05:30
-Toronto,Canada,-04:00
-Madrid,Spain,+01:00
-Singapore,Singapore,+08:00
-Cairo,Egypt,+02:00
-Buenos Aires,Argentina,-03:00
-Lagos,Nigeria,+01:00
-Jakarta,Indonesia,+07:00
-Karachi,Pakistan,+05:00
-Manila,Philippines,+08:00
-Seoul,South Korea,+09:00
-Lima,Peru,-05:00
-Kinshasa,Democratic Republic of the Congo,+01:00
-Bogota,Colombia,-05:00
-Istanbul,Turkey,+03:00
-Tehran,Iran,+03:30
-Dhaka,Bangladesh,+06:00
-Rio de Janeiro,Brazil,-03:00
-Osaka,Japan,+09:00
-Bangkok,Thailand,+07:00
-Hanoi,Vietnam,+07:00
-Guangzhou,China,+08:00
-Chongqing,China,+08:00
-Riyadh,Saudi Arabia,+03:00
-Kolkata,India,+05:30
-Lahore,Pakistan,+05:00
-Kuala Lumpur,Malaysia,+08:00
-Khartoum,Sudan,+03:00
-Johannesburg,South Africa,+02:00
-Nairobi,Kenya,+03:00
-Santiago,Chile,-04:00
-Pune,India,+05:30
-Hyderabad,India,+05:30
-Calgary,Canada,-06:00
-Auckland,New Zealand,+12:00
-Almaty,Kazakhstan,+06:00
-Lusaka,Zambia,+02:00
+New York,United States,America/New_York
+London,United Kingdom,Europe/London
+Tokyo,Japan,Asia/Tokyo
+Paris,France,Europe/Paris
+Sydney,Australia,Australia/Sydney
+Los Angeles,United States,America/Los_Angeles
+Moscow,Russia,Europe/Moscow
+Dubai,United Arab Emirates,Asia/Dubai
+Singapore,Singapore,Asia/Singapore
+Toronto,Canada,America/Toronto
+Berlin,Germany,Europe/Berlin
+Madrid,Spain,Europe/Madrid
+São Paulo,Brazil,America/Sao_Paulo
+Seoul,South Korea,Asia/Seoul
+Amsterdam,Netherlands,Europe/Amsterdam
+Mexico City,Mexico,America/Mexico_City
+Mumbai,India,Asia/Kolkata
+Istanbul,Turkey,Europe/Istanbul
+Hong Kong,China,Asia/Hong_Kong
+Bangkok,Thailand,Asia/Bangkok
+Johannesburg,South Africa,Africa/Johannesburg
+Zurich,Switzerland,Europe/Zurich
+Kuala Lumpur,Malaysia,Asia/Kuala_Lumpur
+Buenos Aires,Argentina,America/Argentina/Buenos_Aires
+Stockholm,Sweden,Europe/Stockholm
+Vienna,Austria,Europe/Vienna
+Warsaw,Poland,Europe/Warsaw
+Athens,Greece,Europe/Athens
+Dublin,Ireland,Europe/Dublin
+Copenhagen,Denmark,Europe/Copenhagen
+Helsinki,Finland,Europe/Helsinki
+Prague,Czech Republic,Europe/Prague
+Lisbon,Portugal,Europe/Lisbon
+Cairo,Egypt,Africa/Cairo
+Nairobi,Kenya,Africa/Nairobi
+Rio de Janeiro,Brazil,America/Sao_Paulo
+Santiago,Chile,America/Santiago
+Lima,Peru,America/Lima
+Bogotá,Colombia,America/Bogota
+Caracas,Venezuela,America/Caracas
