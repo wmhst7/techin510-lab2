@@ -1,53 +1,53 @@
 import streamlit as st
 import pandas as pd
-import time
-from datetime import datetime, timedelta
+import plotly.express as px
+import datetime
+import pytz
 
-# Load dataset
-cities_df = pd.read_csv("my_dataset.csv")
+# Read the cities data from CSV
+cities_data = pd.read_csv("cities.csv")
 
-# Sidebar filter
-st.sidebar.title("Filter")
-selected_cities = st.sidebar.multiselect("Select cities", cities_df["City"].unique())
+# Set page title and layout
+st.set_page_config(page_title="World Clock App", layout="wide")
 
-# Filter data based on selected cities
+# Sidebar filters
+st.sidebar.title("Filters")
+selected_countries = st.sidebar.multiselect("Select Countries", cities_data["Country"].unique())
+
+# Filter data based on selected countries
+filtered_data = cities_data[cities_data["Country"].isin(selected_countries)] if selected_countries else cities_data
+
+# Main content
+st.title("World Clock App")
+
+# City selection for world clock
+selected_cities = st.multiselect("Select Cities for World Clock", filtered_data["City"])
+
+# World clock
 if selected_cities:
-    filtered_data = cities_df[cities_df["City"].isin(selected_cities)]
-else:
-    filtered_data = cities_df.copy()
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.subheader("Current Time")
+        for city in selected_cities:
+            timezone = filtered_data[filtered_data["City"] == city]["TimeZone"].values[0]
+            current_time = datetime.datetime.now(pytz.timezone(timezone)).strftime("%Y-%m-%d %H:%M:%S")
+            st.write(f"{city}: {current_time}")
+    
+    with col2:
+        st.subheader("UNIX Timestamp")
+        unix_timestamp = int(datetime.datetime.now().timestamp())
+        st.write(f"UNIX Timestamp: {unix_timestamp}")
 
-# Show real-time clock
-st.subheader("Real-time Clock")
+# Data visualization
+st.subheader("Data Visualization")
 
-def update_clock():
-    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    st.markdown(f"Current Time (UTC): {current_time}")
+# Bar chart of cities by country
+city_counts = filtered_data["Country"].value_counts()
+fig_bar = px.bar(city_counts, x=city_counts.index, y=city_counts.values, labels={"x": "Country", "y": "Number of Cities"})
+st.plotly_chart(fig_bar)
 
-cols = []
-
-# Show city clocks and UNIX timestamps
-if selected_cities:
-    st.subheader("City Clocks")
-    cols = st.columns(len(selected_cities))
-
-    for i, city in enumerate(selected_cities):
-        with cols[i]:
-            city_data = filtered_data[filtered_data["City"] == city]
-            timezone_offset = city_data["TimeZone"].values[0]
-
-            def update_city_clock():
-                utc_time = datetime.utcnow()
-                city_time = utc_time + timedelta(hours=int(timezone_offset[:3]), minutes=int(timezone_offset[4:]))
-                city_time_str = city_time.strftime("%Y-%m-%d %H:%M:%S")
-                unix_timestamp = int(time.time())
-                st.markdown(f"{city} Time: {city_time_str}")
-                st.markdown(f"UNIX Timestamp: {unix_timestamp}")
-
-            update_city_clock()
-
-for i in range(1):
-    time.sleep(1)
-    update_clock()
-    for city_clock in cols:
-        city_clock.update_city_clock()
-    st.experimental_rerun()
+# Map of cities
+fig_map = px.scatter_geo(filtered_data, lat=filtered_data["City"].apply(lambda x: 0), lon=filtered_data["City"].apply(lambda x: 0),
+                         hover_name="City", color="Country", projection="natural earth")
+st.plotly_chart(fig_map)
